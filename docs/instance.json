@@ -13,7 +13,7 @@
   "stats": {
     "texts": 80,
     "text_label": "books",
-    "segments": 37401,
+    "segments": 37374,
     "segment_label": "verse rows",
     "words": 3121592,
     "distinct_words": 175974,

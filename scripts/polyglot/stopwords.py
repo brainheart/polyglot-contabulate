@@ -9,7 +9,8 @@ STOPWORDS = {
     "he": """
         את אשר על אל כי לא כל גם הנה או אם עד מן מה מי זה זאת הוא היא הם הן אני אתה אנכי אנחנו
         לו לי לה להם לך בו בה בם בי עם אתו אתם אותו אתך ויאמר ויהי והיה אמר ואת ועל ואל וכל כן לכן
-        פן בין תחת אחרי לפני כאשר אך רק גם יש אין עוד שם אז ואשר ולא כי־אם לאמר
+        פן בין תחת אחרי לפני כאשר אך רק גם יש אין עוד שם אז ואשר ולא לאמר
+        ס פ
     """,
     "grc": """
         ο η το οι αι τα του της των τω τη τοις ταις τον την τους τας και δε γαρ ουν μεν τε
@@ -38,7 +39,7 @@ STOPWORDS = {
         the and of to in that shall he unto i his a for they be is him not them it with all thou
         thy was which my me but ye their have thee from as are when this out were by upon you an
         or there so then on at had will hath us her into we she our your these those what who whom
-        said saith say did do also even because if no nor let may might been being o
+        said saith say did do also even because if no nor let may might been being o s
     """,
 }
 

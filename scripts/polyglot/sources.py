@@ -272,6 +272,10 @@ def load_swete(role="main"):
                 ch = 0  # Sirach prologue; Esther Addition A
             elif cn.isdigit():
                 ch = int(cn)
+                fixed_ch = FIXES.get("chapter_renumber", {}).get(book, {}).get(cn)
+                if fixed_ch:
+                    REPAIRS.append((f"{book} chapter {cn}", cn, fixed_ch))
+                    ch = fixed_ch
             else:
                 raise ValueError(f"unexpected chapter {cn} in {fname}")
             obook, nch = book, ch

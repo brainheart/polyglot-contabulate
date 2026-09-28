@@ -1,0 +1,13 @@
+{
+  "name": "polyglot-contabulate",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Parallel Hebrew/Greek/Latin/German/English Bible explorer (Contabulate family)",
+  "scripts": {
+    "build": "python3 scripts/build.py",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.58.2"
+  }
+}

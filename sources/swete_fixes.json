@@ -4,6 +4,19 @@
     "Jdt 9:19": 14
   },
   "last_verse": {
-    "Ps 91": {"last": 16, "note": "Swete 91:15 contains both 15 and 16 (merged in the transcription); without this the psalm would be read as the 'title merged' tradition and shift by one verse."}
+    "Ps 91": {
+      "last": 16,
+      "note": "Swete 91:15 contains both 15 and 16 (merged in the transcription); without this the psalm would be read as the 'title merged' tradition and shift by one verse."
+    }
+  },
+  "chapter_renumber": {
+    "Wis": {
+      "_note": "The transcription labels Wisdom 15-19 as chapters 16-20 (no chapter 15); verified by incipit 'Σὺ δὲ ὁ θεὸς ἡμῶν χρηστὸς' = Wis 15:1.",
+      "16": 15,
+      "17": 16,
+      "18": 17,
+      "19": 18,
+      "20": 19
+    }
   }
 }

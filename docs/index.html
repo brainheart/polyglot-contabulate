@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A parallel Bible explorer in the spirit of the Complutensian Polyglot: Hebrew (Masoretic Text), Greek (Septuagint and New Testament), Latin (Clementine Vulgate), German (Luther 1912) and English (KJV), aligned verse by verse.">
+  <meta name="author" content="Reinhard Engels">
+  <link rel="canonical" href="https://polyglot.contabulate.org/">
+  <meta property="og:title" content="Contabulate: Polyglot — Hebrew · Greek · Latin · German · English">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='6' y='10' width='10' height='44' fill='%238b1538'/%3E%3Crect x='20' y='10' width='10' height='44' fill='%23d4af37'/%3E%3Crect x='34' y='10' width='10' height='44' fill='%238b1538'/%3E%3Crect x='48' y='10' width='10' height='44' fill='%23d4af37'/%3E%3C/svg%3E">
+  <title>Polyglot Contabulate — parallel Hebrew · Greek · Latin · German · English Bible</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-view="table">
+  <div id="loading" class="loading-indicator" role="status" aria-live="polite">
+    <div class="loading-indicator-card"><div class="loading-spinner" aria-hidden="true"></div><p class="loading-message">Loading…</p></div>
+  </div>
+
+  <header>
+    <h1><a href="https://contabulate.org/">Contabulate</a>: 📜 Polyglot</h1>
+    <p class="muted tagline">Hebrew · Greek · Latin · German · English, verse by verse — after the <a href="https://en.wikipedia.org/wiki/Complutensian_Polyglot_Bible" target="_blank" rel="noopener">Complutensian Polyglot</a> (Alcalá, 1514–17), whose columns set the Vulgate between the Hebrew and the Greek.</p>
+    <nav class="tabs" role="tablist" aria-label="Views">
+      <a class="tab" role="tab" href="?view=table" data-view="table">Parallel text</a>
+      <a class="tab" role="tab" href="?view=renderings" data-view="renderings">Renderings</a>
+      <a class="tab" role="tab" href="?view=about" data-view="about">Sources &amp; versification</a>
+    </nav>
+  </header>
+
+  <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+
+  <section id="landing" class="landing" hidden>
+    <div class="landing-grid">
+      <div>
+        <h2>Try one of these</h2>
+        <ul class="samples">
+          <li><a data-nav="1" href="?view=table&amp;b=John&amp;c=1&amp;v=John.1.1">John 1:1 in all five columns</a> — <span class="muted">“In principio erat Verbum”, “Im Anfang war das Wort”…</span></li>
+          <li><a data-nav="1" href="?view=table&amp;b=Ps&amp;c=23">Psalm 23 is Psalm 22 in the Septuagint and Vulgate</a> — <span class="muted">“Dominus regit me”; the grey tags show each edition’s own numbering.</span></li>
+          <li><a data-nav="1" href="?view=renderings&amp;rc=he&amp;rt=%D7%97%D7%A1%D7%93&amp;rm=contains">What becomes of Hebrew <span lang="he">חסד</span> (<i>ḥesed</i>)?</a> — <span class="muted">mercy, lovingkindness · Gnade, Barmherzigkeit · misericordia · ἔλεος.</span></li>
+          <li><a data-nav="1" href="?view=renderings&amp;rc=he&amp;rt=%D7%A9%D7%90%D7%95%D7%9C&amp;rm=contains">Saul or Sheol? One unpointed spelling, two words</a> — <span class="muted"><span lang="he">שאול</span> gives both “Saul” and “hell/grave”; pointed matching separates them.</span></li>
+          <li><a data-nav="1" href="?view=renderings&amp;rc=grc&amp;rm=regex&amp;rt=%5E%CE%BB%CF%8C%CE%B3(%CE%BF%CF%82%7C%CE%BF%CF%85%7C%E1%BF%B3%7C%CE%BF%CE%BD%7C%CE%BF%CE%B9%7C%CF%89%CE%BD%7C%CE%BF%CE%B9%CF%82%7C%CE%BF%CF%85%CF%82)%24&amp;rsc=NT">Greek λόγος in the New Testament</a> — <span class="muted">Luther’s “Wort”, the Vulgate’s “verbum/sermo”.</span></li>
+          <li><a data-nav="1" href="?view=renderings&amp;rc=grc&amp;rm=regex&amp;rt=%5E(%CE%B3%CE%AD%CE%B5%CE%BD%CE%BD%CE%B1%5B%CE%BD%CF%82%5D%3F%7C%E1%BE%85%CE%B4(%CE%B7%CF%82%7C%CE%BF%CF%85%7C%E1%BF%83%7C%CE%B7%CE%BD))%24&amp;rsc=NT">γέεννα and ᾅδης: two Greek places, one English “hell”</a></li>
+          <li><a data-nav="1" href="?view=table&amp;q=gnade&amp;qc=de&amp;mm=word&amp;acc=0&amp;q2=mercy&amp;qc2=en&amp;mm2=word&amp;acc2=0">Where Luther says “Gnade” and the KJV says “mercy”</a></li>
+          <li><a data-nav="1" href="?view=table&amp;b=Esth&amp;c=13">Esther 13: the Greek additions</a> — <span class="muted">rows with empty Hebrew, German and English cells are deliberate gaps.</span></li>
+          <li><a data-nav="1" href="?view=table&amp;b=Mal&amp;c=4">Malachi 4 = Hebrew Malachi 3:19–24</a> · <a data-nav="1" href="?view=table&amp;b=1Kgs&amp;c=2&amp;v=1Kgs.2.35a">3 Kingdoms 2:35a–o, the Septuagint’s long insertion</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>How the columns line up</h2>
+        <p class="muted">Every row is a verse in King James numbering (plus rows for the Apocrypha, Psalm titles and Septuagint extras). Each text keeps its own numbering, shown as a grey tag where it differs. The mapping is computed from STEPBible’s <a data-nav="1" href="?view=about">TVTMS versification tables</a>, evaluated against each edition.</p>
+        <div class="coverage-slot"></div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="tableView" aria-label="Parallel text">
+      <div class="controls">
+        <div class="controls-row">
+          <label class="control-group"><span class="label-strong">Book</span> <select id="bookSel"></select></label>
+          <label class="control-group"><span class="label-strong">Chapter</span> <select id="chapSel"></select></label>
+          <button type="button" id="prevCh" class="link-btn" aria-label="Previous chapter">‹ prev</button>
+          <button type="button" id="nextCh" class="link-btn" aria-label="Next chapter">next ›</button>
+          <label class="control-group toggle"><input type="checkbox" id="nat"> own verse numbers</label>
+        </div>
+        <form id="searchForm" class="controls-row" role="search">
+          <label class="control-group grow"><span class="label-strong">Search</span>
+            <input type="text" id="q" placeholder="word, phrase or /regex/ — e.g. Dominus, λόγος, חסד, Gnade" autocomplete="off" spellcheck="false"></label>
+          <label class="control-group"><span>in</span> <select id="qc"></select></label>
+          <label class="control-group"><select id="mm" aria-label="Match mode"><option value="plain">contains</option><option value="word">whole word</option><option value="regex">regex</option></select></label>
+          <label class="control-group toggle" title="Ignore accents, breathings, vowel points and cantillation (and Latin j/i, æ/ae)"><input type="checkbox" id="acc"> ignore accents &amp; points</label>
+          <label class="control-group"><span>scope</span> <select id="sc"><option value="all">whole Bible</option><option value="book">this book</option><option value="chap">this chapter</option></select></label>
+          <button type="submit">Search</button>
+          <button type="button" id="addCond" class="link-btn">+ and…</button>
+          <button type="button" id="clearSearch" class="link-btn">clear</button>
+          <div id="cond2" class="controls-row sub" hidden>
+            <label class="control-group grow"><span class="label-strong">and</span>
+              <input type="text" id="q2" placeholder="second word, in another column" autocomplete="off" spellcheck="false"></label>
+            <label class="control-group"><span>in</span> <select id="qc2"></select></label>
+            <label class="control-group"><select id="mm2" aria-label="Match mode for second condition"><option value="plain">contains</option><option value="word">whole word</option><option value="regex">regex</option></select></label>
+            <label class="control-group toggle"><input type="checkbox" id="acc2"> ignore accents &amp; points</label>
+          </div>
+        </form>
+        <div class="controls-row">
+          <span class="label-strong">Columns</span>
+          <div id="colChips" class="chips"></div>
+        </div>
+      </div>
+      <div class="result-bar">
+        <span id="resultInfo" class="result-info" aria-live="polite"></span>
+        <div id="pager" class="pager"></div>
+      </div>
+      <div id="tableWrap" class="table-wrap"></div>
+      <p class="legend muted"><mark class="hit1">first condition</mark> <mark class="hit2">second condition</mark> <span class="native">3:19</span> the edition’s own reference · <span class="gapmark">—</span> no text at this reference in that edition (a deliberate gap) · <span class="contmark">↑ text shown above</span> the edition joins this verse with the previous one.</p>
+    </section>
+
+    <section id="renderView" aria-label="Renderings" hidden>
+      <div class="notice"><strong>Statistical, not scholarly.</strong> Renderings counts which words co-occur in the same aligned verse rows and ranks them by log-likelihood (G²). It is a lens for exploring how translators handled a term, not a lexicon: inflection, idiom, free rendering, conflated homographs, and occasional verse misalignment all add noise.</div>
+      <form id="rForm" class="controls">
+        <div class="controls-row">
+          <label class="control-group"><span class="label-strong">Term in</span> <select id="rc"></select></label>
+          <label class="control-group grow"><input type="text" id="rt" placeholder="חסד · λόγος · verbum · Gnade · mercy" autocomplete="off" spellcheck="false" aria-label="Term"></label>
+          <label class="control-group"><select id="rm" aria-label="Match word forms"><option value="exact">exact form</option><option value="prefix">starts with</option><option value="contains">contains</option><option value="regex">regex over forms</option></select></label>
+          <label class="control-group" id="rpWrap"><select id="rp" aria-label="Hebrew spelling"><option value="0">consonantal (unpointed)</option><option value="1">pointed (vocalized)</option></select></label>
+        </div>
+        <div class="controls-row">
+          <label class="control-group"><span>scope</span> <select id="rsc"></select></label>
+          <label class="control-group"><span>min. together</span> <input type="number" id="rmin" min="1" max="50" class="num-input"></label>
+          <label class="control-group toggle"><input type="checkbox" id="rsw"> hide function words</label>
+          <button type="submit">Show renderings</button>
+        </div>
+      </form>
+      <div id="rOut" class="rout"></div>
+    </section>
+
+    <section id="aboutView" class="about" aria-label="Sources and versification" hidden>
+      <h2>Texts</h2>
+      <table class="sources">
+        <thead><tr><th>Column</th><th>Edition</th><th>Source</th><th>License</th></tr></thead>
+        <tbody>
+          <tr><td>Hebrew</td><td>Masoretic Text, Westminster Leningrad Codex (with vowels and cantillation)</td><td>via <a href="https://tanakh.contabulate.org/">tanakh-contabulate</a></td><td>Public domain text</td></tr>
+          <tr><td>Greek (OT + Apocrypha)</td><td>H. B. Swete, <i>The Old Testament in Greek according to the Septuagint</i> (Cambridge 1887–1912); Daniel, Susanna and Bel in Theodotion’s version</td><td><a href="https://github.com/OpenGreekAndLatin/First1KGreek">Open Greek and Latin, First1KGreek</a> TEI (tlg0527)</td><td>Edition public domain; digitization <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></td></tr>
+          <tr><td>Greek (NT)</td><td>SBL Greek New Testament 1.2</td><td>via <a href="https://gnt.contabulate.org/">gnt-contabulate</a></td><td><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, © 2010 SBL and Logos</td></tr>
+          <tr><td>Latin</td><td>Clementine Vulgate (1592), Tweedale / Clementine Vulgate Project text</td><td><a href="https://github.com/seven1m/open-bibles">seven1m/open-bibles</a> USFX</td><td>Public domain</td></tr>
+          <tr><td>German</td><td>Luther Bible, 1912 revision</td><td>via <a href="https://luther.contabulate.org/">luther-contabulate</a></td><td>Public domain</td></tr>
+          <tr><td>English</td><td>King James Version (1769)</td><td>via <a href="https://kjv.contabulate.org/">kjv-contabulate</a></td><td>Public domain (Crown copyright in the UK)</td></tr>
+          <tr><td>Versification</td><td>TVTMS — Translators Versification Traditions with Methodology for Standardisation</td><td><a href="https://github.com/STEPBible/STEPBible-Data">STEPBible.org</a> (Tyndale House, Cambridge)</td><td><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td></tr>
+        </tbody>
+      </table>
+      <p class="muted">Why Swete and not Rahlfs: Rahlfs–Hanhart and the CCAT/CATSS Septuagint are distributed under terms that do not clearly allow public redistribution. Swete’s edition is in the public domain and its OGL transcription is openly licensed. It is an OCR-based transcription and still has scanning errors (e.g. stray letters, merged verses); see <code>SOURCES.md</code>.</p>
+
+      <h2>Versification</h2>
+      <p>The spine is King James numbering, extended with the King James Apocrypha numbering for deuterocanonical books, with extra rows for Psalm titles (verse “title”) and for Septuagint material that has no standard verse (e.g. 3 Kingdoms 2:35a–o). Each edition keeps its native reference, shown as a grey tag when it differs.</p>
+      <p>Instead of hand-written offsets, the build evaluates STEPBible’s TVTMS rules against each edition’s own verse inventory: every rule carries tests such as “Gen 32:33 is the last verse”, “Psalm 9:30 exists” or word-count comparisons, and a rule applies only when its tests are true for that edition. This one mechanism handles Hebrew-vs-English chapter splits (Luther 1912 and the Masoretic Text), the Septuagint/Vulgate Psalm numbering (Pss 9–147) and titles counted as verses, Malachi 4, Joel 3, Septuagint Jeremiah’s order, the Kingdoms books, and Daniel’s Greek additions. Greek Esther’s additions are mapped by a documented rule because Swete letters them in his own scheme. Where an edition joins two standard verses, the text appears in the first row and the next shows “↑”.</p>
+      <p>Empty cells are deliberate: the Hebrew has no Apocrypha, Luther 1912 and the KJV as used here have no Apocrypha, and the Septuagint lacks some Hebrew passages (e.g. parts of 1 Samuel 17–18).</p>
+      <h3>Coverage</h3>
+      <div class="coverage-slot"></div>
+      <h3>Known gaps</h3>
+      <ul>
+        <li>Swete’s Ecclesiastes is not in the OGL transcription, so the Greek column is empty there.</li>
+        <li>The Vulgate’s Tobit and Judith are Jerome’s own, differently divided recensions; their rows are aligned by number only.</li>
+        <li>The Septuagint’s Odes, and the Old Greek (non-Theodotion) Daniel, Susanna and Bel, are kept in the standalone LXX data but not shown here.</li>
+        <li>Swete’s transcription has OCR errors; a few verse-number defects are repaired and logged by the build.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Built by <a href="https://everydaysystems.com" target="_blank" rel="noopener">Reinhard Engels</a>
+    <span aria-hidden="true"> · </span>
+    <a href="https://github.com/brainheart/polyglot-contabulate" target="_blank" rel="noopener">Source</a>
+    <span aria-hidden="true"> · </span>
+    <span id="built">Built</span>
+  </footer>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

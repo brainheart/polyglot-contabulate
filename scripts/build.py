@@ -81,7 +81,19 @@ def place(col, verses, mapping, is_standard=False):
     """
     cells = defaultdict(list)
     prov = Counter()
+    # where does each chapter's verse 1 go? (unnumbered titles follow it)
+    v1_target = {}
     for nv, mp in zip(verses, mapping):
+        if nv["v"] == 1 and not nv["sub"] and mp and not is_standard:
+            t = cid_from_std(mp["std"][0]) if mp["std"] else None
+            if t:
+                v1_target[(nv["book"], nv["ch"])] = t
+    for nv, mp in zip(verses, mapping):
+        if nv["v"] == 0 and mp is None and (nv["book"], nv["ch"]) in v1_target:
+            b2, ch2, _ = v1_target[(nv["book"], nv["ch"])].split(".")
+            cells[f"{b2}.{ch2}.0"].append((nv, "main"))
+            prov["title follows verse 1"] += 1
+            continue
         book = nv["book"]
         if book == "EpJer":
             book = "Bar"  # KJVA files the Epistle of Jeremiah as Baruch 6
@@ -241,12 +253,17 @@ def build():
         per_row = []
         df = Counter()
         tf = Counter()
+        surface = defaultdict(Counter)
         for cid in spine:
             entries = [e for e, r in col_cells[col].get(cid, []) if r == "main"]
             if not entries:
                 per_row.append(None)
                 continue
-            toks = [key(kname, t) for e in entries for t in tokens(e["text"])]
+            surf = [t for e in entries for t in tokens(e["text"])]
+            toks = [key(kname, t) for t in surf]
+            if tkey in ("grc", "la", "de", "en"):
+                for k2, t in zip(toks, surf):
+                    surface[k2][t] += 1
             tf.update(toks)
             types = set(toks)
             df.update(types)
@@ -259,7 +276,14 @@ def build():
                 rows.append(None)
             else:
                 rows.append(" ".join(to36(i) for i in sorted(idx[t] for t in types)))
-        payload = {"key": tkey, "col": col, "vocab": vocab, "tf": [tf[w] for w in vocab], "rows": rows}
+        payload = {"key": tkey, "col": col, "vocab": vocab, "rows": rows}
+        if surface:
+            # most frequent spelling for display (accents, capitals); "" = same as key
+            disp = []
+            for w in vocab:
+                best = surface[w].most_common(1)[0][0]
+                disp.append("" if best == w else best)
+            payload["disp"] = disp
         (DATA / "tokens" / f"{tkey}.json").write_text(
             json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         token_stats[tkey] = {"types": len(vocab), "tokens": sum(tf.values()),
