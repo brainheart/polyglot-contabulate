@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "id": "polyglot",
+  "emoji": "📜",
+  "title": "Polyglot",
+  "tagline": "Parallel Hebrew · Greek · Latin · German · English Bible Explorer",
+  "language": "Hebrew, Greek, Latin, German, English",
+  "created": "2026-09-28",
+  "url": "https://polyglot.contabulate.org/",
+  "source": "https://github.com/brainheart/polyglot-contabulate",
+  "sample_queries": [],
+  "updated": "2026-09-28",
+  "stats": {
+    "texts": 80,
+    "text_label": "books",
+    "segments": 37401,
+    "segment_label": "verse rows",
+    "words": 3121592,
+    "distinct_words": 175974,
+    "commentaries": 0,
+    "comments": 0
+  }
+}

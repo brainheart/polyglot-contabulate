@@ -1,0 +1,9 @@
+{
+  "_about": "Documented corrections to the OGL First1KGreek transcription of Swete where verse numbering (not text) is defective and would break TVTMS tests. Automatic OCR repairs (a number that sits between n-1 and n+1, e.g. '220' between 19 and 21) are applied by the loader and logged in build/alignment_report.json; the entries here are the ones the automatic rule cannot decide.",
+  "renumber": {
+    "Jdt 9:19": 14
+  },
+  "last_verse": {
+    "Ps 91": {"last": 16, "note": "Swete 91:15 contains both 15 and 16 (merged in the transcription); without this the psalm would be read as the 'title merged' tradition and shift by one verse."}
+  }
+}
