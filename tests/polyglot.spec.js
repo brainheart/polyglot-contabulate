@@ -63,11 +63,10 @@ test('Psalm 23 shows Vulgate/LXX Psalm 22 with native references', async ({ page
   const row = await rowCells(page, 'Ps 23:1');
   await expect(row.locator('td.cell-la')).toContainText('Dominus regit me');
   await expect(row.locator('td.cell-la .native')).toHaveText('22:1');
-  await expect(row.locator('td.cell-grc .native')).toHaveText('22:1');
+  await expect(row.locator('td.cell-grc .native')).toHaveText('22:title–1');
+  await expect(row.locator('td.cell-grc')).toContainText('Ψαλμὸς τῷ Δαυείδ. Κύριος ποιμαίνει με');
   await expect(row.locator('td.cell-en')).toContainText('The LORD is my shepherd');
-  const title = await rowCells(page, 'Ps 23 title');
-  await expect(title.locator('td.cell-grc')).toContainText('Ψαλμὸς τῷ Δαυείδ');
-  await expect(title.locator('td.cell-en.gap')).toHaveCount(1);
+  await expect(page.locator('tr', { hasText: 'Ps 23 title' })).toHaveCount(0);
   // hiding native refs
   await page.locator('#nat').uncheck();
   await expect(page.locator('td.cell-la .native')).toHaveCount(0);

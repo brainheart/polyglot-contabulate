@@ -195,6 +195,22 @@ def build():
         "grc": {**placed["lxx"], **placed["gnt"]},
     }
 
+    # A Swete psalm title only keeps a row of its own where another column has
+    # title text there too (Hebrew titles numbered as verses, e.g. Ps 51).
+    # Otherwise the other traditions carry the title inside verse 1 (Ps 23:
+    # "Psalmus David. Dominus regit me"), so the Greek title joins that row.
+    grc = col_cells["grc"]
+    merged_titles = 0
+    for cid in [c for c in grc if c.startswith("Ps.") and c.endswith(".0")]:
+        if any(col_cells[c].get(cid) for c in ("he", "la", "de", "en")):
+            continue
+        v1 = cid[:-2] + ".1"
+        if v1 not in grc:
+            continue
+        grc[v1] = grc.pop(cid) + grc[v1]
+        merged_titles += 1
+    report["psalm_titles_merged_into_v1"] = merged_titles
+
     spine = sorted({cid for c in col_cells.values() for cid in c}, key=cid_key)
     unknown = [c for c in spine if c.split(".")[0] not in ORDER]
     if unknown:

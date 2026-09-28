@@ -67,7 +67,11 @@ digitization — not used).
    * `IfEmpty` lines are ignored (our verses always have text);
    * `CopiedFrom` (LXX duplicates such as 3 Kgdms 2:35a–o, 12:24a–z) stays at its
      own position as an extra row instead of doubling the parallel verse;
-   * unnumbered psalm titles in Swete follow wherever that psalm's verse 1 maps;
+   * unnumbered psalm titles in Swete follow wherever that psalm's verse 1 maps.
+     They keep a title row only where the Hebrew numbers its title as verses
+     (e.g. Ps 51); otherwise the Hebrew, Vulgate and Luther carry the title
+     inside verse 1, so the Greek title joins the verse-1 row too (Ps 23 shows
+     `22:title–1`: "Ψαλμὸς τῷ Δαυείδ. Κύριος ποιμαίνει με…");
    * Swete's Greek Esther additions are lettered in Swete's own scheme, which
      TVTMS does not describe; the loader maps them to KJV-Apocrypha Esther
      10:4–16:24 (`_esther_fixed` in `scripts/polyglot/sources.py`).

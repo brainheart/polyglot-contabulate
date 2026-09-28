@@ -178,11 +178,12 @@ class TestSpotChecks(unittest.TestCase):
 
     def test_psalm_23_is_22_in_vulgate_and_lxx(self):
         self.assertCell("Ps.23.1", "la", "Dominus regit me", native="22:1")
-        self.assertCell("Ps.23.1", "grc", "Κύριος ποιμαίνει με", native="22:1")
+        self.assertCell("Ps.23.1", "grc", "Ψαλμὸς τῷ Δαυείδ. Κύριος ποιμαίνει με", native="22:title–1")
         self.assertCell("Ps.23.1", "he", "רֹ֝עִ֗י")
         self.assertCell("Ps.23.1", "de", "Der HERR ist mein Hirte")
         self.assertCell("Ps.23.1", "en", "The LORD is my shepherd")
-        self.assertCell("Ps.23.0", "grc", "Ψαλμὸς τῷ Δαυείδ", native="22:title")
+        self.assertNotIn("Ps.23.0", Data.rows_of["Ps"])  # no title-only Greek row
+        self.assertCell("Ps.51.0", "grc", "Εἰς τὸ τέλος")  # Hebrew title row keeps the Greek title
 
     def test_john_1_1(self):
         self.assertCell("John.1.1", "grc", "Ἐν ἀρχῇ ἦν ὁ λόγος")
