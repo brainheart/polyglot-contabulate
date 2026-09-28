@@ -311,6 +311,7 @@ def build():
     }
     (DATA / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
+    report["tvtms_corrections_applied"] = [list(c) for c in T.APPLIED_CORRECTIONS]
     report["swete_verse_number_repairs"] = [list(r) for r in S.REPAIRS]
     report["spine_rows"] = rows_total
     report["coverage"] = meta["coverage"]

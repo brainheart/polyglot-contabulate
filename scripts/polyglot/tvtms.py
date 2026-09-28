@@ -19,6 +19,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from .books import SIL_TO_OSIS
+from .textnorm import tokens
 
 ROOT = Path(__file__).resolve().parents[2]
 TVTMS_PATH = ROOT / "sources" / "raw" / "tvtms" / "TVTMS.txt"
@@ -72,7 +73,9 @@ class Inventory:
             if b is None:
                 continue
             ch, v, sub = str(nv["ch"]), nv["v"], nv["sub"]
-            n = len(nv["text"].split())
+            # count words as letter runs, so Hebrew maqaf-joined words count
+            # separately; skip the setuma/petucha paragraph letters
+            n = sum(1 for t in tokens(nv["text"]) if t not in ("ס", "פ"))
             self.words[(b, ch, v, sub)] += n
             self.whole[(b, ch, v)] += n
             if v == 0:
@@ -150,7 +153,17 @@ class Line:
     __slots__ = ("lineno", "stype", "src", "std", "action", "tests", "src_raw", "std_raw")
 
 
-def load_lines(path=TVTMS_PATH):
+CORRECTIONS_PATH = ROOT / "sources" / "tvtms_corrections.json"
+APPLIED_CORRECTIONS = []
+
+
+def load_lines(path=TVTMS_PATH, corrections_path=CORRECTIONS_PATH):
+    import json
+    fixes = {}
+    if corrections_path.exists():
+        for c in json.loads(corrections_path.read_text(encoding="utf-8"))["changes"]:
+            fixes[(c["stype"], c["src"])] = c["std"]
+    del APPLIED_CORRECTIONS[:]
     text = path.read_text(encoding="utf-8-sig")
     lines = text.split("\n")
     start = next(i for i, l in enumerate(lines) if l.startswith("#DataStart(Expanded)"))
@@ -172,7 +185,11 @@ def load_lines(path=TVTMS_PATH):
         ln.src = src
         ln.src_raw = f[1].strip()
         ln.std_raw = f[2].strip()
-        ln.std = parse_std(f[2].strip())
+        fix = fixes.get((ln.stype, ln.src_raw))
+        if fix:
+            APPLIED_CORRECTIONS.append((ln.lineno, ln.stype, ln.src_raw, ln.std_raw, fix))
+            ln.std_raw = fix
+        ln.std = parse_std(ln.std_raw)
         ln.action = action
         ln.tests = [t for t in f[8].split("&") if t.strip()]
         if not ln.std:

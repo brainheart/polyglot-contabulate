@@ -1,0 +1,11 @@
+{
+  "_about": "Local changes to STEPBible TVTMS mapping lines (CC BY 4.0). TVTMS asks users who change the data to publish a note of their changes; this file is that note. Each entry replaces the StandardRef of the expanded-data line with the given SourceType and SourceRef. Please report upstream to STEPBible before publishing.",
+  "changes": [
+    {"stype": "Greek", "src": "Mal.4:4", "std": "Mal.4:5", "why": "Septuagint order in Mal 4:4-6 (Swete, Brenton) is Elijah / turn the hearts / remember the law of Moses, i.e. KJV 4:5, 4:6, 4:4. TVTMS lists the inverse permutation (4:4->4:6, 4:5->4:4, 4:6->4:5)."},
+    {"stype": "Greek", "src": "Mal.4:5", "std": "Mal.4:6", "why": "see Mal.4:4"},
+    {"stype": "Greek", "src": "Mal.4:6", "std": "Mal.4:4", "why": "see Mal.4:4"},
+    {"stype": "Greek2", "src": "Mal.3:22", "std": "Mal.4:5", "why": "Rahlfs-style Mal 3:22-24 has the same Septuagint order (Elijah, hearts, Moses); TVTMS again lists the inverse permutation."},
+    {"stype": "Greek2", "src": "Mal.3:23", "std": "Mal.4:6", "why": "see Mal.3:22"},
+    {"stype": "Greek2", "src": "Mal.3:24", "std": "Mal.4:4", "why": "see Mal.3:22"}
+  ]
+}
