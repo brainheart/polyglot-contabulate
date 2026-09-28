@@ -187,5 +187,8 @@ table.rtable td.rank { color: var(--muted); }
   .landing-grid { grid-template-columns: 1fr; }
   .rcards { grid-template-columns: 1fr; }
   input[type="text"] { min-width: 10rem; }
+  .control-group { max-width: 100%; min-width: 0; }
+  .control-group select { max-width: 100%; min-width: 0; }
+  #bookSel { max-width: 14rem; }
   table.parallel { min-width: 760px; }
 }

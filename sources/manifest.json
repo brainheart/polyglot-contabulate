@@ -1,0 +1,316 @@
+{
+ "downloaded": [
+  {
+   "path": "sources/raw/vulgate/lat-clementine.usfx.xml",
+   "url": "https://raw.githubusercontent.com/seven1m/open-bibles/e310b178189e30443c44f2338022aab73546b274/lat-clementine.usfx.xml",
+   "sha256": "5da5f3c07fa6896d4a2b45f5f309c3ece43e554fd059b31b8ae3688bbd182baf"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg001.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg001/tlg0527.tlg001.1st1K-grc1.xml",
+   "sha256": "6e410d3e8eae24874f103b63047ac89c7227c2733474cddbb592cf6c37e717f3"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg002.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg002/tlg0527.tlg002.1st1K-grc1.xml",
+   "sha256": "11c5f357ec79815948c6a13b723c95a25328bb64f8f9861e168ee6cb74f8e2ec"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg003.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg003/tlg0527.tlg003.1st1K-grc1.xml",
+   "sha256": "e6507fd4800bbbcc2ac58a78b404f89a5504aec0743046ba0c2dff3c57a6de16"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg004.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg004/tlg0527.tlg004.1st1K-grc1.xml",
+   "sha256": "78aa544fa5bdc31723404848adc637a795d2826a8941a2350137d21e2ef099b7"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg005.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg005/tlg0527.tlg005.1st1K-grc1.xml",
+   "sha256": "dc146a0f8906279494134040ae3727360cefcfedeeb931aeaec91cec03eb72fa"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg006.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg006/tlg0527.tlg006.1st1K-grc1.xml",
+   "sha256": "2d74abf95ff9250dbdd00eba4b948c218bf68fd9a63e587a07747040025b9476"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg008.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg008/tlg0527.tlg008.1st1K-grc1.xml",
+   "sha256": "3d9f8fb6efc66edda5014fa189271fab7fbde403b73f5aa6461958f77579ac24"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg010.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg010/tlg0527.tlg010.1st1K-grc1.xml",
+   "sha256": "c69973e18bf87ba98e7fdef8ea0456a0d478b99b0291033da726f8acb648a484"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg011.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg011/tlg0527.tlg011.1st1K-grc1.xml",
+   "sha256": "445a1d88e416260803f1a6f8e52df1110aa991456238f283ac7cc6af6d769089"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg012.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg012/tlg0527.tlg012.1st1K-grc1.xml",
+   "sha256": "bfd1967042513a024858d5a15af9da9e783d8585f43cfda479c881ebd04662f1"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg013.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg013/tlg0527.tlg013.1st1K-grc1.xml",
+   "sha256": "3bd50974a1da62204f3bc617b546511b538634dceeabaf58122f053eabcde1b7"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg014.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg014/tlg0527.tlg014.1st1K-grc1.xml",
+   "sha256": "3eec1a02a061f9a6d9ec4311d355ef40866b5d710caf2d10152267babd53a3d5"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg015.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg015/tlg0527.tlg015.1st1K-grc1.xml",
+   "sha256": "0ddcd6201d3b3745611cf589801c528772c37e57580c5b8cf0ece26184d425a5"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg016.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg016/tlg0527.tlg016.1st1K-grc1.xml",
+   "sha256": "5513988b3e57eb0a889692b785092b683ad81564bbcbfd16e7723fd007c7481b"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg017.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg017/tlg0527.tlg017.1st1K-grc1.xml",
+   "sha256": "44f4e12d3d4f4f34701653eca121ad880b3988c1102acb4521738399605cacf0"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg018.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg018/tlg0527.tlg018.1st1K-grc1.xml",
+   "sha256": "c2854296300a227c0c09cb39ea0743b933df0fd0ea1d1fb6d566c107ccf31250"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg019.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg019/tlg0527.tlg019.1st1K-grc1.xml",
+   "sha256": "82f2b01ea74646fa0f6d3d80a7470a1edf8095a11fc1e13a10e2d88678de0cb4"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg020.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg020/tlg0527.tlg020.1st1K-grc1.xml",
+   "sha256": "7e755379d0b3f04627597f47d154da8c2320850d35e33ecb6b674273e5049aaa"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg021.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg021/tlg0527.tlg021.1st1K-grc1.xml",
+   "sha256": "380bca2fc080d613a82cc8a468d83841d1af759b62aea0b609ef9aaa60d0a787"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg023.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg023/tlg0527.tlg023.1st1K-grc1.xml",
+   "sha256": "278fcb432ca9ff870510971a8377e7c57fc76d926bd279f9b6ce403bb1c82445"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg024.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg024/tlg0527.tlg024.1st1K-grc1.xml",
+   "sha256": "cdfe0b3033d4f20abcf160266c0efbee84e536f7e2331a9338f3af0bc2830c11"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg025.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg025/tlg0527.tlg025.1st1K-grc1.xml",
+   "sha256": "c76124d30aeb3fe38a7f7f78db96200f4c3b5fb36e62c7e23785d4798c345a62"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg026.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg026/tlg0527.tlg026.1st1K-grc1.xml",
+   "sha256": "a81064c25ceacb750636d4ef5381dc1b81d0ba921db006011a3c5bfb0eba88dc"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg027.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg027/tlg0527.tlg027.1st1K-grc1.xml",
+   "sha256": "a028f5bccc6f23ed0b77f9d578cb08b91ca7b6b4f6dda6ed24efe790a8a9987c"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg028.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg028/tlg0527.tlg028.1st1K-grc1.xml",
+   "sha256": "5155ba48f1474ef03abeea7a1a74e39b28cc54b4e8159c13208084f80d9b99a8"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg029.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg029/tlg0527.tlg029.1st1K-grc1.xml",
+   "sha256": "d88896708e735578a1c1a5681f1a703d98e48de4d2877bc5d7fc5304493aa333"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg031.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg031/tlg0527.tlg031.1st1K-grc1.xml",
+   "sha256": "8c54d2269d065b517d41f6ba69d9e80e8390ef07583b84433968667a309bf4af"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg032.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg032/tlg0527.tlg032.1st1K-grc1.xml",
+   "sha256": "b38bd7b2005362f43e639c79ba7c54056ecb1dcae97fc6b12001f7b985a03da5"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg033.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg033/tlg0527.tlg033.1st1K-grc1.xml",
+   "sha256": "a4e14aeeafb3c88a6dc8e71bc62cb71d2026b95fb1a014f7e14609db394fa297"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg034.1st1K-grc2.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg034/tlg0527.tlg034.1st1K-grc2.xml",
+   "sha256": "554121f0ed01f9754eb0a3910c28e7ffd9337fe59bf4cadcc54f6b13857ca7a1"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg035.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg035/tlg0527.tlg035.1st1K-grc1.xml",
+   "sha256": "539ddb781c11a4cc5e8d954f872e11a37711d9dd8a4a4851f803a14494fd067e"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg036.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg036/tlg0527.tlg036.1st1K-grc1.xml",
+   "sha256": "f24de79f1c96b0577ed304d42001e9f53fef3199cc102d054df7729795272d99"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg037.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg037/tlg0527.tlg037.1st1K-grc1.xml",
+   "sha256": "ab1ee5a06f686e5b76245782cacc3e4da763f0b0e58eacea96f3f51d780f022f"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg038.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg038/tlg0527.tlg038.1st1K-grc1.xml",
+   "sha256": "bbbc5402e38b8c3d732436be69837ee1134afdcf05953df10829a88567bb19de"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg039.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg039/tlg0527.tlg039.1st1K-grc1.xml",
+   "sha256": "0d162e8ab6419b97d54ecbb874e8d4cdfd7fe9193f9b34854596d58e8ae539c9"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg040.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg040/tlg0527.tlg040.1st1K-grc1.xml",
+   "sha256": "ba9ebe6a8f84261a5c7bf40625248c21dc730c572aae0d8a6a546d17621b611d"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg041.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg041/tlg0527.tlg041.1st1K-grc1.xml",
+   "sha256": "7f4a3f090fcd4b2697515c5a59cb1ffc81718c42d9028223bc844c6d51098731"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg042.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg042/tlg0527.tlg042.1st1K-grc1.xml",
+   "sha256": "b0c232fefdbfd9e33862157e20f12137ae50227556fa01668561cfb5864a8359"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg043.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg043/tlg0527.tlg043.1st1K-grc1.xml",
+   "sha256": "41d53a9ba5343d4b6a1659f0b30574690343d7d88b2893355f931c57c53aa3de"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg044.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg044/tlg0527.tlg044.1st1K-grc1.xml",
+   "sha256": "c80657e88e5c59c466bf8c301b9b9442a5277762e9a0dbbf987c75e52465cbf1"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg045.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg045/tlg0527.tlg045.1st1K-grc1.xml",
+   "sha256": "70cc0ef34a4c12a280c3407249ca682dc5b8cd777dbf7d31456a7355da1a7a94"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg046.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg046/tlg0527.tlg046.1st1K-grc1.xml",
+   "sha256": "797fb6e785dcabcb1b59acbe9d3e2df54d133c78059edf638b6087a16600831a"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg047.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg047/tlg0527.tlg047.1st1K-grc1.xml",
+   "sha256": "a96a9a52d4469b74d3365371a96bca27858c8072db6a0466f6f414fa411e533a"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg048.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg048/tlg0527.tlg048.1st1K-grc1.xml",
+   "sha256": "0c9cbad97585c5eb8927867d9ce6de6f612bc48b5f13fb0a2ef70a4801e2dca5"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg049.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg049/tlg0527.tlg049.1st1K-grc1.xml",
+   "sha256": "6beecdc05482e53bd899d49274e323c234ccad9e6aadd1d89dc98c4f5ee1c6d5"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg050.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg050/tlg0527.tlg050.1st1K-grc1.xml",
+   "sha256": "5970c69ac576fbab9ab3ccb5edfa2175417ed5566f8404eb25cfe4071a5f6bd1"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg051.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg051/tlg0527.tlg051.1st1K-grc1.xml",
+   "sha256": "b2c2712ff7668f1b1a9bd85e548f3dd01e10f70d14c7e8a26a17f96c9b8de998"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg052.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg052/tlg0527.tlg052.1st1K-grc1.xml",
+   "sha256": "07b2e94928153b4d928b685c8121a0c9f685fc2956753b2c3cc62db294b3c44e"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg053.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg053/tlg0527.tlg053.1st1K-grc1.xml",
+   "sha256": "579c1c683cf79bfcab72629faa59aa65b59948a31dbcae7f2d53d04116401533"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg054.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg054/tlg0527.tlg054.1st1K-grc1.xml",
+   "sha256": "931b8f51b78b936113711755b6ff1f3257fba511acfc70826dd9f300719a0ce6"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg055.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg055/tlg0527.tlg055.1st1K-grc1.xml",
+   "sha256": "436dc7bdfcba0e551492d04689b89ed3fa51920bbf7c60bcfb437a542cc3dfec"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg056.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg056/tlg0527.tlg056.1st1K-grc1.xml",
+   "sha256": "fa8160a315688cd94c30f534de26b9ec6250d4c41ab2059eafff3e43a5a6a465"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg057.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg057/tlg0527.tlg057.1st1K-grc1.xml",
+   "sha256": "7a2f052ef94ce28968f978a13c35f3199ce4a9e5adfbf32fce36d5a76002621c"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg058.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg058/tlg0527.tlg058.1st1K-grc1.xml",
+   "sha256": "dd29011364fb416457382406c463a21a43a26ca692c480668a2423e94f7d5e35"
+  },
+  {
+   "path": "sources/raw/swete/tlg0527.tlg059.1st1K-grc1.xml",
+   "url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/8ee111eb44ecef4120c844e10749178d95d1f30c/data/tlg0527/tlg059/tlg0527.tlg059.1st1K-grc1.xml",
+   "sha256": "2af9b536e2cf12e1f6bc52a6ceae10f02e7c75290d4f35623f40c35bc78a8453"
+  },
+  {
+   "path": "sources/raw/tvtms/TVTMS.txt",
+   "url": "https://raw.githubusercontent.com/STEPBible/STEPBible-Data/b99716b0cddb648ddb95cc786a197180f2f97d48/Versification/TVTMS%20-%20Translators%20Versification%20Traditions%20with%20Methodology%20for%20Standardisation%20for%20Eng%2BHeb%2BLat%2BGrk%2BOthers%20-%20STEPBible.org%20CC%20BY.txt",
+   "sha256": "63058e0f20201af4bdaa7d830da5be8f493455d947c5f147d84840b33db9ddf8",
+   "committed": false
+  }
+ ],
+ "sibling_corpora": {
+  "en": {
+   "repo": "kjv-contabulate",
+   "commit": "88a5180e1b6360ff3d06491452d10a8d37a35f14",
+   "file": "docs/lines/all_lines.json",
+   "sha256": "2c7ea20d150998568f816decc48e4ddbd0a36923954f94a406819ff48835617c"
+  },
+  "de": {
+   "repo": "luther-contabulate",
+   "commit": "fe9de37c0daf2d68ba7d901c85a7f0e0fe69e29f",
+   "file": "docs/lines/all_lines.json",
+   "sha256": "b58152f56810da1075ee15c9ef52e85e20ea0e2a484d76c3e3469003b1f717f5"
+  },
+  "he": {
+   "repo": "tanakh-contabulate",
+   "commit": "f845bebf6bb483358f5fd769ae191bfcfbdbf9c5",
+   "file": "docs/lines/all_lines.json",
+   "sha256": "20c7dfde19e6f75ad9527fed49aefca74eb6ab27cbcce57993d8da7f111d0951"
+  },
+  "gnt": {
+   "repo": "gnt-contabulate",
+   "commit": "3358e28edd100d8a0d097e573ff3e76448ddae9c",
+   "file": "docs/lines/all_lines.json",
+   "sha256": "35635400cc018c4f8a885aa1455bb8378ea5e89e6a0753cb1692108cba4abc5c"
+  }
+ }
+}

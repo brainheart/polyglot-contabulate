@@ -8,7 +8,24 @@
   "created": "2026-09-28",
   "url": "https://polyglot.contabulate.org/",
   "source": "https://github.com/brainheart/polyglot-contabulate",
-  "sample_queries": [],
+  "sample_queries": [
+    {
+      "label": "John 1:1 across the Greek, Latin, German and English columns",
+      "url": "https://polyglot.contabulate.org/?view=table&b=John&c=1&v=John.1.1"
+    },
+    {
+      "label": "Psalm 23 is Psalm 22 in the Septuagint and Vulgate",
+      "url": "https://polyglot.contabulate.org/?view=table&b=Ps&c=23"
+    },
+    {
+      "label": "What becomes of Hebrew חסד (ḥesed) in Greek, Latin, German and English?",
+      "url": "https://polyglot.contabulate.org/?view=renderings&rc=he&rt=%D7%97%D7%A1%D7%93&rm=contains"
+    },
+    {
+      "label": "Saul or Sheol? One unpointed Hebrew spelling, two words",
+      "url": "https://polyglot.contabulate.org/?view=renderings&rc=he&rt=%D7%A9%D7%90%D7%95%D7%9C&rm=contains"
+    }
+  ],
   "updated": "2026-09-28",
   "stats": {
     "texts": 80,
