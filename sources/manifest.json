@@ -285,6 +285,46 @@
    "url": "https://raw.githubusercontent.com/STEPBible/STEPBible-Data/b99716b0cddb648ddb95cc786a197180f2f97d48/Versification/TVTMS%20-%20Translators%20Versification%20Traditions%20with%20Methodology%20for%20Standardisation%20for%20Eng%2BHeb%2BLat%2BGrk%2BOthers%20-%20STEPBible.org%20CC%20BY.txt",
    "sha256": "63058e0f20201af4bdaa7d830da5be8f493455d947c5f147d84840b33db9ddf8",
    "committed": false
+  },
+  {
+   "path": "sources/raw/brenton/22-ECCgrcbrent.usfm",
+   "url": "https://ebible.org/Scriptures/grcbrent_usfm.zip",
+   "zip_member": "22-ECCgrcbrent.usfm",
+   "zip_sha256": "964b96f1de0d47aabde9e2178a6776ea7851bcab2d6c8c115a94807f61293429",
+   "sha256": "89154911ca8bf152b7d645e575007e21b5200f335b0c6b08bb5876846f8e7669",
+   "note": "Brenton Greek LXX (1851, public domain per copr.htm); zip is not versioned upstream, retrieved 2026-09-28"
+  },
+  {
+   "path": "sources/raw/brenton/03-EXOgrcbrent.usfm",
+   "url": "https://ebible.org/Scriptures/grcbrent_usfm.zip",
+   "zip_member": "03-EXOgrcbrent.usfm",
+   "zip_sha256": "964b96f1de0d47aabde9e2178a6776ea7851bcab2d6c8c115a94807f61293429",
+   "sha256": "a8a3255196adbf0382da118a62d618515dca4b09620adbfdb5004adfcfa53a22",
+   "note": "Brenton Greek LXX (1851, public domain per copr.htm); zip is not versioned upstream, retrieved 2026-09-28"
+  },
+  {
+   "path": "sources/raw/brenton/05-NUMgrcbrent.usfm",
+   "url": "https://ebible.org/Scriptures/grcbrent_usfm.zip",
+   "zip_member": "05-NUMgrcbrent.usfm",
+   "zip_sha256": "964b96f1de0d47aabde9e2178a6776ea7851bcab2d6c8c115a94807f61293429",
+   "sha256": "bf21677259596e10c934517f1e82c42a15f45e311c92fec88264aaa5c4e2b82b",
+   "note": "Brenton Greek LXX (1851, public domain per copr.htm); zip is not versioned upstream, retrieved 2026-09-28"
+  },
+  {
+   "path": "sources/raw/brenton/12-1KIgrcbrent.usfm",
+   "url": "https://ebible.org/Scriptures/grcbrent_usfm.zip",
+   "zip_member": "12-1KIgrcbrent.usfm",
+   "zip_sha256": "964b96f1de0d47aabde9e2178a6776ea7851bcab2d6c8c115a94807f61293429",
+   "sha256": "7c61dbbd7cf68a9d9102be7a72c7cd327503ba4c3d50e76492d60b8da7147bee",
+   "note": "Brenton Greek LXX (1851, public domain per copr.htm); zip is not versioned upstream, retrieved 2026-09-28"
+  },
+  {
+   "path": "sources/raw/brenton/copr.htm",
+   "url": "https://ebible.org/Scriptures/grcbrent_usfm.zip",
+   "zip_member": "copr.htm",
+   "zip_sha256": "964b96f1de0d47aabde9e2178a6776ea7851bcab2d6c8c115a94807f61293429",
+   "sha256": "00778564d297029782272103be7d2c48b89951f1bae1aa86becd9d2b43b5ae46",
+   "note": "Brenton Greek LXX (1851, public domain per copr.htm); zip is not versioned upstream, retrieved 2026-09-28"
   }
  ],
  "sibling_corpora": {

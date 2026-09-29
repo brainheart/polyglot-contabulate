@@ -294,7 +294,15 @@ function cellHTML(col, row, cells, conds) {
     const re = cd.res[col] || (cd.col !== 'any' ? queryRegex(cd.q, cd.mode, col, cd.level) : null);
     if (re) spans.push([cd.cls, matchSpans(text, re, col, cd.level)]);
   }
-  return `<td ${attrs}>${natHTML}${spans.length ? highlight(text, spans) : escapeHTML(text)}</td>`;
+  return `<td ${attrs}>${natHTML}${spans.length ? highlight(text, spans) : escapeHTML(text)}${sourceMark(col, row.cid)}</td>`;
+}
+
+// Text that is not from the column's main edition (Brenton fills Swete's gaps).
+function sourceMark(col, cid) {
+  const src = ((META.text_sources || {})[col] || {})[cid];
+  if (!src) return '';
+  const title = `text: ${src} (public domain), not Swete — see Sources`;
+  return ` <sup class="text-source" title="${escapeHTML(title)}" aria-label="${escapeHTML(title)}" data-text-source="${escapeHTML(src)}">Br</sup>`;
 }
 
 function renderPager(page, pages, total) {

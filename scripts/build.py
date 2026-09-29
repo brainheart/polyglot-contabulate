@@ -211,6 +211,15 @@ def build():
         merged_titles += 1
     report["psalm_titles_merged_into_v1"] = merged_titles
 
+    # Rows whose text is not the column's main edition (Brenton fills Swete's gaps)
+    text_sources = {}
+    for col, cells in col_cells.items():
+        for cid, entries in cells.items():
+            srcs = {e["src"] for e, r in entries if r == "main" and e.get("src")}
+            if srcs:
+                text_sources.setdefault(col, {})[cid] = "; ".join(sorted(srcs))
+    report["text_sources"] = {c: len(v) for c, v in text_sources.items()}
+
     spine = sorted({cid for c in col_cells.values() for cid in c}, key=cid_key)
     unknown = [c for c in spine if c.split(".")[0] not in ORDER]
     if unknown:
@@ -324,6 +333,7 @@ def build():
         "rows_by_column_count": {str(k): v for k, v in sorted(both.items())},
         "tokens": token_stats,
         "stopwords": stop,
+        "text_sources": text_sources,
     }
     (DATA / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
@@ -414,6 +424,7 @@ def write_standalone(texts, placed):
                 "act": nv["ch"], "scene": nv["v"], "line_num": n, "speaker": "",
                 "text": nv["text"], "native_ref": native_label(nv),
                 "standard_id": std_of.get(id(nv)),
+                **({"text_source": nv["src"]} if nv.get("src") else {}),
             })
         out = ROOT / "corpora" / name / "all_lines.json"
         out.parent.mkdir(parents=True, exist_ok=True)

@@ -7,6 +7,11 @@ the Complutensian Polyglot (Alcalá, 1514–17). Five columns, verse by verse:
 |---|---|---|---|---|
 | Masoretic Text (WLC) | Swete's Septuagint · SBLGNT | Clementine Vulgate | Luther 1912 | King James Version |
 
+Swete's OGL transcription lacks Ecclesiastes and lost the text of Exod 20:1,
+Num 17:1, Num 19:1 and 3 Kgdms 16:1; those Greek cells are Brenton's Greek
+(1851, public domain, Sixtine/Vaticanus-based), not Swete, and are marked “Br”
+(see `SOURCES.md`).
+
 **Status: local prototype.** Not published; no GitHub repo, DNS or hub entry yet
 (see *Publishing checklist*).
 
@@ -65,7 +70,7 @@ tests/                        Python data checks + Playwright
 
 1. Create `brainheart/polyglot-contabulate`, push `main`, enable Pages from `/docs`.
 2. Add `docs/CNAME` = `polyglot.contabulate.org`; Cloudflare CNAME → `brainheart.github.io`; verify HTTP/HTTPS and cert.
-3. Licensing: code MIT; Swete-derived data CC BY-SA 4.0 (attribute OGL/First1KGreek); SBLGNT and TVTMS attribution (CC BY 4.0) — all present in the About view and SOURCES.md. Consider reporting the Malachi correction to STEPBible.
+3. Licensing: code MIT; Swete-derived data CC BY-SA 4.0 (attribute OGL/First1KGreek); Brenton's Greek (Ecclesiastes + 4 verses) public domain; SBLGNT and TVTMS attribution (CC BY 4.0) — all present in the About view and SOURCES.md. Consider reporting the Malachi correction to STEPBible.
 4. Add sample queries to the hub via `instance-meta.json` (already filled), rebuild, check `docs/instance.json`.
 5. Hub: append `https://polyglot.contabulate.org/` to `contabulate/docs/instances.json` and a README row.
 6. Post-deploy: run the Playwright suite against the live URL; check a few deep links.

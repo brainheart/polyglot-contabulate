@@ -217,6 +217,76 @@ def _esther_fixed(cn, n):
 
 SKIP_SWETE = {"028"}  # Odes: Swete's order (A) duplicates canticles; see SOURCES.md
 
+# ------------------------------------------------- Brenton (gap filler, not Swete)
+
+# Brenton's Greek (1851, public domain; ebible.org grcbrent USFM) fills what the
+# OGL transcription lacks. Every record taken from it has src = BRENTON, which
+# the build carries into meta.json "text_sources" and the UI marks.
+BRENTON = "Brenton 1851"
+BRENTON_BOOKS = {"Eccl": "22-ECCgrcbrent.usfm"}  # First1KGreek tlg0527.tlg030 has no text
+# Swete verse divisions that hold only a marginal chapter numeral (text lost in
+# the transcription): Swete ref -> Brenton (file, chapter, verse). Neighbours
+# were compared with Brenton's; tests re-check them. 1Kgs (3 Kgdms) 14:1 is not
+# here: 14:1-20 is absent from Codex B, Swete and Brenton alike.
+BRENTON_VERSES = {
+    ("Exod", 20, 1): ("03-EXOgrcbrent.usfm", "20", "1"),
+    # Brenton numbers Num 16:36-50 as 17:1-15, so Swete 17:1 is Brenton 17:16.
+    ("Num", 17, 1): ("05-NUMgrcbrent.usfm", "17", "16"),
+    ("Num", 19, 1): ("05-NUMgrcbrent.usfm", "19", "1"),
+    ("1Kgs", 16, 1): ("12-1KIgrcbrent.usfm", "16", "1"),
+}
+USFM_NOTE_RE = re.compile(r"\\(f|fe|x|fig)\s.*?\\\1\*", re.S)  # footnotes, cross-refs
+USFM_WORD_RE = re.compile(r"\\(\+?w)\s+([^|\\]*)(?:\|[^\\]*)?\\\1\*")  # \w word|lemma="…"\w*
+USFM_SKIP_LINE_RE = re.compile(  # identification, titles, headings, remarks
+    r"^\\(?:id|ide|h|toc\d*|toca\d*|mt\d*|mte\d*|ms\d*|mr|s\d*|sr|r|rem|sts|cl|cp)\b.*$", re.M)
+USFM_MARKER_RE = re.compile(r"\\\+?[a-z]+\d*\*?")
+NUMERAL_ONLY_RE = re.compile(r"[IVXLC]+")
+
+
+def parse_usfm(path):
+    """{(chapter, verse): text} of one USFM book, markup stripped and
+    normalized like the Swete text (NFC, spacing, ’ for elision)."""
+    usfm = USFM_NOTE_RE.sub(" ", path.read_text(encoding="utf-8"))
+    usfm = USFM_SKIP_LINE_RE.sub("", USFM_WORD_RE.sub(r"\2", usfm))
+    parts = re.split(r"\\([cv])\s+(\S+)", usfm)
+    verses, chapter = {}, None
+    for kind, number, body in zip(parts[1::3], parts[2::3], parts[3::3]):
+        if kind == "c":
+            chapter = number
+            continue
+        text = re.sub(r"\s+", " ", USFM_MARKER_RE.sub(" ", body).replace("\u02bc", "’")).strip()
+        verses[(chapter, number)] = nfc(re.sub(r"\s+([,.;:·])", r"\1", text))
+    return verses
+
+
+def load_brenton_book(book):
+    out = []
+    for (ch, v), text in parse_usfm(RAW / "brenton" / BRENTON_BOOKS[book]).items():
+        rec = {"book": book, "ch": int(ch), "v": int(v), "sub": 0, "text": text, "src": BRENTON}
+        rec.update(_nat(book, "", int(ch), int(v)))
+        out.append(rec)
+    return out
+
+
+def fill_from_brenton(out):
+    """Swete verse divisions that hold only a marginal chapter numeral ("XX")
+    take Brenton's text where BRENTON_VERSES has it; the rest are dropped
+    (1Kgs 14:1, a real gap)."""
+    kept = []
+    for rec in out:
+        if not NUMERAL_ONLY_RE.fullmatch(rec["text"]):
+            kept.append(rec)
+            continue
+        ref = BRENTON_VERSES.get((rec["book"], rec["ch"], rec["v"]))
+        if ref:
+            rec.update(text=parse_usfm(RAW / "brenton" / ref[0])[(ref[1], ref[2])], src=BRENTON)
+            kept.append(rec)
+    filled = {(r["book"], r["ch"], r["v"]) for r in kept if r.get("src")}
+    if set(BRENTON_VERSES) - filled:
+        raise ValueError(f"no numeral-only Swete verse for {sorted(set(BRENTON_VERSES) - filled)}")
+    out[:] = kept
+    return out
+
 
 def _nat(book, native_book_label, ch, v, sub=0, nch=None):
     vs = "title" if v == 0 else str(v)
@@ -320,6 +390,9 @@ def load_swete(role="main"):
                 rec.update({"v": v, "sub": sub})
                 rec.update(_nat(obook, nb, ch, v, sub, nch=nch))
                 out.append(rec)
+    if role in ("main", "all"):
+        fill_from_brenton(out)
+        out += load_brenton_book("Eccl")
     return out
 
 

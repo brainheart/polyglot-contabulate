@@ -13,6 +13,7 @@ const SHOTS = [
   ['02-psalm-23-across-columns.png', '?view=table&b=Ps&c=23', false],
   ['03-renderings-chesed.png', `?view=renderings&rc=he&rt=${enc('חסד')}&rm=contains`, true],
   ['04-sheol-saul-homograph.png', `?view=renderings&rc=he&rt=${enc('שאול')}&rm=contains`, true],
+  ['05-eccl-1-2.png', '?view=table&b=Eccl&c=1&v=Eccl.1.2', false],
 ];
 
 (async () => {

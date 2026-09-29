@@ -8,6 +8,7 @@ from the inputs below. Hashes and pinned commits are in `sources/manifest.json`;
 |---|---|---|---|
 | Hebrew | Masoretic Text, Westminster Leningrad Codex (pointed, with cantillation) | `../tanakh-contabulate/docs/lines/all_lines.json` @ `f845beb` (read-only) | WLC text is public domain |
 | Greek, OT + Apocrypha | H. B. Swete, *The Old Testament in Greek according to the Septuagint* (Cambridge, 1887–1912 editions) | Open Greek and Latin, First1KGreek `data/tlg0527` TEI @ `8ee111e` → `sources/raw/swete/` (55 files) | Edition: public domain. Digitization: **CC BY-SA 4.0** (OGL / University of Leipzig) |
+| Greek, Ecclesiastes + 4 lost verses | L. C. L. Brenton, *The Septuagint Version of the Old Testament* (London: Bagster, 1851), Greek text (Sixtine edition, Codex Vaticanus-based) — **not Swete** | eBible.org `grcbrent` USFM, https://ebible.org/Scriptures/grcbrent_usfm.zip (SHA-256 `964b96f1…3429`, retrieved 2026-09-28; unversioned upstream, so pinned by hash) → `sources/raw/brenton/` (4 books + `copr.htm`) | **Public domain** (`copr.htm`: “Public Domain”) |
 | Greek, NT | SBL Greek New Testament 1.2 (M. W. Holmes) | `../gnt-contabulate/docs/lines/all_lines.json` @ `3358e28` | CC BY 4.0, © 2010 SBL and Logos Bible Software |
 | Latin | Clementine Vulgate (1592), Tweedale / Clementine Vulgate Project (VulSearch) text, 73 books | `seven1m/open-bibles` `lat-clementine.usfx.xml` @ `e310b17` → `sources/raw/vulgate/` | Public domain |
 | German | Luther Bible, 1912 revision | `../luther-contabulate/docs/lines/all_lines.json` @ `fe9de37` | Public domain |
@@ -36,7 +37,9 @@ digitization — not used).
 * It is machine-corrected OCR. Expect stray letters and occasional misread
   words (e.g. `Νπββουχοδονοσὸρ`). Mixed Latin/Greek look-alike capitals are
   mapped back to Greek; stray digits are removed.
-* **Ecclesiastes is missing** from First1KGreek (`tlg0527.tlg030` has no text).
+* **Ecclesiastes is missing** from First1KGreek (`tlg0527.tlg030` has no text),
+  and five verse divisions hold only a marginal chapter numeral (`XX`, `XVII`…).
+  See *Brenton gap filler* below.
 * Some verse numbers are defective. The loader repairs a number that sits
   between two consecutive neighbours (e.g. `220` between 19 and 21 → 20); every
   repair is logged in `build/alignment_report.json` (`swete_verse_number_repairs`).
@@ -49,6 +52,31 @@ digitization — not used).
   Greek versions are in `corpora/lxx/all_lines.json` (ids `DanOG.*` etc.).
 * The Odes (Swete follows Codex A's order, with an unnumbered split of Ode 4)
   are omitted from this prototype.
+
+### Brenton gap filler (not Swete)
+
+These Greek cells are Brenton's Greek (1851, public domain, Sixtine/Vaticanus),
+not Swete's; `meta.json` lists them under `text_sources.grc` (cid → `"Brenton 1851"`),
+`corpora/lxx/all_lines.json` flags them with `text_source`, and the table marks
+them with a small “Br” (tooltip “text: Brenton 1851”).
+
+* **Ecclesiastes**, all 222 verses (`22-ECCgrcbrent.usfm`). Brenton follows the
+  Hebrew chapter break (4:17, 5:1–19); TVTMS maps it onto KJV 5:1–20 like the
+  Hebrew and Luther columns.
+* **Four numeral-only verse divisions** take Brenton's verse where his neighbours
+  match Swete's: Exod 20:1, Num 19:1, 3 Kgdms (1 Kgs) 16:1, and Num 17:1 =
+  Brenton 17:16 (Brenton numbers Num 16:36–50 as 17:1–15; his 17:15 and 17:17
+  are Swete's 16:50 and 17:2).
+* **3 Kgdms 14:1** is dropped rather than filled: 14:1–20 is absent from Codex B,
+  and from Swete and Brenton alike, so the Greek column is empty there. (It used
+  to show the stray numeral `XIV`, as the other four showed `XX`, `XVII`, `XIX`, `XVI`.)
+* USFM: footnotes/cross-references, `\w …|attributes\w*`, headings and
+  identification lines are dropped, other markers stripped; spacing and NFC as
+  for Swete; elision `ʼ` → `’`. The loader is `scripts/polyglot/sources.py`
+  (`BRENTON_BOOKS`, `BRENTON_VERSES`).
+
+The rest of the Swete-derived data stays CC BY-SA 4.0; the Brenton text and
+cells carry no licence obligation of their own.
 
 ## Versification method
 
@@ -99,8 +127,9 @@ Judith, which are Jerome's own recensions and align by number only.
 ## Record shape of the new corpora
 
 `corpora/vulgate/all_lines.json` (35,809 verses) and `corpora/lxx/all_lines.json`
-(29,120 verses incl. the Old Greek Daniel/Susanna/Bel) use the same fields as
+(29,341 verses incl. the Old Greek Daniel/Susanna/Bel and Brenton's Ecclesiastes) use the same fields as
 the other instances (`play_id`, `canonical_id`, `location`, `act`, `scene`,
 `line_num`, `speaker`, `text`) with the **native** reference as
 `canonical_id`, plus `native_ref` (as printed, e.g. `3 Kgdms 2:35a`) and
-`standard_id` (the KJV-spine row used here).
+`standard_id` (the KJV-spine row used here); Brenton records add
+`text_source: "Brenton 1851"`.

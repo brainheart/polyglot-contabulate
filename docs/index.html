@@ -120,6 +120,7 @@
         <tbody>
           <tr><td>Hebrew</td><td>Masoretic Text, Westminster Leningrad Codex (with vowels and cantillation)</td><td>via <a href="https://tanakh.contabulate.org/">tanakh-contabulate</a></td><td>Public domain text</td></tr>
           <tr><td>Greek (OT + Apocrypha)</td><td>H. B. Swete, <i>The Old Testament in Greek according to the Septuagint</i> (Cambridge 1887–1912); Daniel, Susanna and Bel in Theodotion’s version</td><td><a href="https://github.com/OpenGreekAndLatin/First1KGreek">Open Greek and Latin, First1KGreek</a> TEI (tlg0527)</td><td>Edition public domain; digitization <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></td></tr>
+          <tr id="brenton"><td>Greek (Ecclesiastes; Exod 20:1, Num 17:1, Num 19:1, 1 Kgs 16:1)</td><td>L. C. L. Brenton’s Greek text (London 1851; the Sixtine edition, based on Codex Vaticanus) — <b>not Swete</b>. Used only where the OGL transcription has no text; marked <sup class="text-source" title="text: Brenton 1851">Br</sup> in the table</td><td><a href="https://ebible.org/Scriptures/details.php?id=grcbrent">eBible.org grcbrent</a> USFM</td><td>Public domain</td></tr>
           <tr><td>Greek (NT)</td><td>SBL Greek New Testament 1.2</td><td>via <a href="https://gnt.contabulate.org/">gnt-contabulate</a></td><td><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, © 2010 SBL and Logos</td></tr>
           <tr><td>Latin</td><td>Clementine Vulgate (1592), Tweedale / Clementine Vulgate Project text</td><td><a href="https://github.com/seven1m/open-bibles">seven1m/open-bibles</a> USFX</td><td>Public domain</td></tr>
           <tr><td>German</td><td>Luther Bible, 1912 revision</td><td>via <a href="https://luther.contabulate.org/">luther-contabulate</a></td><td>Public domain</td></tr>
@@ -137,7 +138,8 @@
       <div class="coverage-slot"></div>
       <h3>Known gaps</h3>
       <ul>
-        <li>Swete’s Ecclesiastes is not in the OGL transcription, so the Greek column is empty there.</li>
+        <li>Swete’s Ecclesiastes is not in the OGL transcription, so the Greek column there is Brenton’s text (1851, public domain), not Swete’s; so are Exod 20:1, Num 17:1, Num 19:1 and 1 Kgs (3 Kgdms) 16:1, whose text the transcription lost. Each such cell is marked <sup class="text-source" title="text: Brenton 1851">Br</sup>.</li>
+        <li>1 Kgs 14:1–20 (3 Kgdms 14:1–20) is absent from Codex Vaticanus, and so from Swete and Brenton alike; the Greek column is empty there.</li>
         <li>The Vulgate’s Tobit and Judith are Jerome’s own, differently divided recensions; their rows are aligned by number only.</li>
         <li>The Septuagint’s Odes, and the Old Greek (non-Theodotion) Daniel, Susanna and Bel, are kept in the standalone LXX data but not shown here.</li>
         <li>Swete’s transcription has OCR errors; a few verse-number defects are repaired and logged by the build.</li>

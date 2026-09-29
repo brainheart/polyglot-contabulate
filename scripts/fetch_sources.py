@@ -8,10 +8,12 @@ clone must run this once before building.
     python3 scripts/fetch_sources.py --verify   # hashes only, incl. sibling corpora
 """
 import hashlib
+import io
 import json
 import subprocess
 import sys
 import urllib.request
+import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,6 +21,15 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def sha(p):
     return hashlib.sha256(p.read_bytes()).hexdigest()
+
+
+def download(url, zips={}):
+    """Bytes at url (cached per run); ebible.org refuses urllib's User-Agent."""
+    if url not in zips:
+        req = urllib.request.Request(url, headers={"User-Agent": "polyglot-contabulate/1.0"})
+        with urllib.request.urlopen(req) as r:
+            zips[url] = r.read()
+    return zips[url]
 
 
 def main():
@@ -31,8 +42,13 @@ def main():
         if not verify and (force or not p.exists()):
             p.parent.mkdir(parents=True, exist_ok=True)
             print("fetch", f["path"])
-            with urllib.request.urlopen(f["url"]) as r:
-                p.write_bytes(r.read())
+            data = download(f["url"])
+            if "zip_member" in f:  # unversioned upstream zip, pinned by its hash
+                if hashlib.sha256(data).hexdigest() != f["zip_sha256"]:
+                    print("ZIP CHANGED UPSTREAM", f["url"]); bad += 1
+                    continue
+                data = zipfile.ZipFile(io.BytesIO(data)).read(f["zip_member"])
+            p.write_bytes(data)
         if not p.exists():
             print("MISSING", f["path"]); bad += 1
         elif sha(p) != f["sha256"]:

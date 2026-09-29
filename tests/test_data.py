@@ -7,9 +7,11 @@ Pins corpus facts that catch parser or versification drift (alignment
 coverage, spot checks at the classic divergence points, Renderings sanity),
 and writes build/token_fixture.json for the browser tokenizer-agreement test.
 """
+import hashlib
 import json
 import math
 import random
+import re
 import sys
 import unittest
 from collections import Counter
@@ -155,6 +157,53 @@ class TestSpineAndCoverage(unittest.TestCase):
         qa = json.loads(qa_path.read_text(encoding="utf-8"))
         for pair, r in qa.items():
             self.assertLess(r["flag_rate_pct"], 2.0, pair)
+
+
+class TestBrentonGapFiller(unittest.TestCase):
+    """Ecclesiastes and four lost verse-1 texts come from Brenton, flagged."""
+
+    def test_ecclesiastes_greek_aligned_to_kjv(self):
+        eccl = next(b for b in Data.meta["books"] if b["id"] == "Eccl")
+        self.assertEqual(eccl["present"]["grc"], 222)
+        self.assertEqual(len(eccl["chapters"]), 12)
+        self.assertIn("Ματαιότης ματαιοτήτων", Data.text(Data.cell("Eccl.1.2", "grc")))
+        self.assertIn("Vanity of vanities", Data.text(Data.cell("Eccl.1.2", "en")))
+        # Brenton breaks chapter 4/5 like the Hebrew; TVTMS maps it to KJV
+        self.assertIn("Φύλαξον τὸν πόδα σου", Data.text(Data.cell("Eccl.5.1", "grc")))
+        self.assertEqual(Data.native(Data.cell("Eccl.5.1", "grc")), "4:17")
+        self.assertEqual(Data.native(Data.cell("Eccl.5.20", "grc")), "5:19")
+        self.assertIn("Ὅτι σύμπαν τὸ ποίημα", Data.text(Data.cell("Eccl.12.14", "grc")))
+
+    def test_brenton_cells_are_flagged_and_numerals_gone(self):
+        src = Data.meta["text_sources"]
+        self.assertEqual(set(src), {"grc"})
+        self.assertEqual(set(src["grc"].values()), {"Brenton 1851"})
+        eccl = [c for c in src["grc"] if c.startswith("Eccl.")]
+        self.assertEqual(len(eccl), 222)
+        self.assertEqual(set(src["grc"]) - set(eccl), {"Exod.20.1", "Num.17.1", "Num.19.1", "1Kgs.16.1"})
+        self.assertIn("Καὶ ἐλάλησε Κύριος πάντας τοὺς λόγους", Data.text(Data.cell("Exod.20.1", "grc")))
+        self.assertIn("Καὶ ἐλάλησε Κύριος πρὸς Μωυσῆν, λέγων", Data.text(Data.cell("Num.17.1", "grc")))
+        self.assertIn("πρὸς Μωυσῆν καὶ Ἀαρὼν", Data.text(Data.cell("Num.19.1", "grc")))
+        self.assertIn("ἐν χειρὶ Ἰοὺ", Data.text(Data.cell("1Kgs.16.1", "grc")))
+        self.assertIsNone(Data.cell("1Kgs.14.1", "grc"))  # absent from Codex B: a real gap
+        for cid in ("Exod.20.2", "Num.17.2", "1Kgs.14.21", "Ps.23.1"):
+            self.assertNotIn(cid, src["grc"])
+        numerals = [cid for cid in Data.spine if re.fullmatch(r"[IVXLC]+", Data.text(Data.cell(cid, "grc")) or "")]
+        self.assertEqual(numerals, [])
+
+    def test_standalone_lxx_and_manifest(self):
+        lxx = json.loads((ROOT / "corpora" / "lxx" / "all_lines.json").read_text(encoding="utf-8"))
+        flagged = [r for r in lxx if r.get("text_source")]
+        self.assertEqual(len(flagged), 226)
+        self.assertEqual({r["canonical_id"] for r in flagged if not r["canonical_id"].startswith("Eccl.")},
+                         {"Exod.20.1", "Num.17.1", "Num.19.1", "1Kgs.16.1"})
+        man = json.loads((ROOT / "sources" / "manifest.json").read_text())
+        brenton = [f for f in man["downloaded"] if f["path"].startswith("sources/raw/brenton/")]
+        self.assertEqual(len(brenton), 5)
+        for f in brenton:
+            self.assertEqual(f["zip_sha256"], "964b96f1de0d47aabde9e2178a6776ea7851bcab2d6c8c115a94807f61293429")
+            self.assertEqual(hashlib.sha256((ROOT / f["path"]).read_bytes()).hexdigest(), f["sha256"])
+        self.assertIn("Public Domain", (ROOT / "sources/raw/brenton/copr.htm").read_text())
 
 
 class TestSpotChecks(unittest.TestCase):

@@ -58,6 +58,30 @@ test('John 1:1 deep link: focused row, Hebrew column dropped for the NT', async 
   await expect(row.locator('td.cell-en')).toContainText('In the beginning was the Word');
 });
 
+test('Ecclesiastes has Brenton Greek aligned to KJV, marked as not Swete', async ({ page }) => {
+  const errors = await open(page, '?view=table&b=Eccl&c=1&v=Eccl.1.2');
+  const row = await rowCells(page, 'Eccl 1:2');
+  await expect(row.locator('td.cell-grc')).toContainText('Ματαιότης ματαιοτήτων');
+  await expect(row.locator('td.cell-en')).toContainText('Vanity of vanities');
+  await expect(row.locator('td.cell-grc .text-source')).toHaveAttribute('title', /^text: Brenton 1851/);
+  await expect(row.locator('td.cell-en .text-source')).toHaveCount(0);
+  await expect(page.locator('td.cell-grc .text-source')).toHaveCount(18);
+  // Brenton's 4:17 is KJV 5:1
+  await open(page, '?view=table&b=Eccl&c=5');
+  const r51 = await rowCells(page, 'Eccl 5:1');
+  await expect(r51.locator('td.cell-grc .native')).toHaveText('4:17');
+  await expect(r51.locator('td.cell-grc')).toContainText('Φύλαξον τὸν πόδα σου');
+  // a filled verse-1 is marked, its Swete neighbour is not; 3 Kgdms 14:1 stays a gap
+  await open(page, '?view=table&b=Exod&c=20');
+  await expect((await rowCells(page, 'Exod 20:1')).locator('td.cell-grc .text-source')).toHaveCount(1);
+  await expect((await rowCells(page, 'Exod 20:2')).locator('td.cell-grc .text-source')).toHaveCount(0);
+  await open(page, '?view=table&b=1Kgs&c=14');
+  await expect((await rowCells(page, '1Kgs 14:1')).locator('td.cell-grc')).toHaveClass(/gap/);
+  await open(page, '?view=about');
+  await expect(page.locator('#brenton')).toContainText('not Swete');
+  expect(errors).toEqual([]);
+});
+
 test('Psalm 23 shows Vulgate/LXX Psalm 22 with native references', async ({ page }) => {
   await open(page, '?view=table&b=Ps&c=23');
   const row = await rowCells(page, 'Ps 23:1');

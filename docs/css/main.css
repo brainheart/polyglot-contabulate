@@ -141,6 +141,7 @@ td.cont { color: var(--muted); font-style: italic; }
   display: inline-block; font-size: 0.72rem; font-family: Georgia, serif; font-style: normal; color: #6f6250;
   background: #efe9dc; border-radius: 3px; padding: 0 0.3rem; margin-inline-end: 0.2rem; direction: ltr; unicode-bidi: isolate;
 }
+.text-source { font-size: 0.68rem; font-family: Georgia, serif; font-style: italic; color: var(--burgundy); opacity: 0.75; cursor: help; }
 mark.hit1 { background: var(--hit1); color: inherit; border-radius: 2px; }
 mark.hit2 { background: var(--hit2); color: inherit; border-radius: 2px; }
 .legend { font-size: 0.9rem; margin-top: 0.6rem; }
